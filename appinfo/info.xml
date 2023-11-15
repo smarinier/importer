@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+    <!--
+    SPDX-FileCopyrightText: Sebastien Marinier <seb@smarinier.net>
+    SPDX-License-Identifier: CC0-1.0
+    -->
+    <id>importer</id>
+    <name>Importer</name>
+    <summary>Importer allow you to import text documents and EverNote export files (.enex)</summary>
+    <description>Importer allow you to import text document sand EverNote export files (.enex).</description>
+    <version>0.0.1</version>
+    <licence>agpl</licence>
+    <author mail="seb@smarinier.net">Sebastien Marinier</author>
+    <namespace>Importer</namespace>
+    <category>tools</category>
+    <bugs>https://smarinier.net/</bugs>
+    <dependencies>
+        <nextcloud min-version="25" max-version="27"/>
+    </dependencies>
+
+    <commands>
+        <command>OCA\Importer\Command\Import</command>
+    </commands>
+</info>
