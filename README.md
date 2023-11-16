@@ -66,4 +66,5 @@ sudo -u www-data ./occ importer:import -F /tmp/MyExport.enex -U seb -D Notes/Not
 - with -D option, folders are created if necessary
 - when a note already exists, a "(XX)" is appended to make it unique
 - the Importer requires the Text NextCloud application to be installed
+- Import keep the Note "last modification time", so your imported notes will be timed at the original time (update time)
 
