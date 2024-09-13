@@ -5,6 +5,7 @@
 namespace OCA\Importer\EverNote;
 
 use League\HTMLToMarkdown\HtmlConverter as HTMLToMarkDownConverter;
+use OCA\Importer\HTMLToMarkdown\ENoteHTMLConverter;
 
 /**
  * ENote follow the <note> tag from Enex XML
@@ -44,15 +45,11 @@ class ENote {
 
 	public function getMarkDownContent(): string {
 
-		$converter = new HTMLToMarkDownConverter([
+		$converter = new ENoteHTMLConverter([
 			'header_style' => 'atx',
 			'strip_tags' => true
 		]);
-		$converter->getEnvironment()->addConverter(new ENoteMediaConverter($this->getResources()));
 		$markDown = $converter->convert($this->content);
-
-		// remove XML header
-		$markDown = \preg_replace('/<\?xml [^>]+>/', '', $markDown); // Strip doctype declaration
 		return $markDown;
 	}
 

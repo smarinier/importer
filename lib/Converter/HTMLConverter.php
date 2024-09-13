@@ -4,7 +4,7 @@
 
 namespace OCA\Importer\Converter;
 
-use League\HTMLToMarkdown\HtmlConverter as HTMLToMarkDownConverter;
+use OCA\Importer\HTMLToMarkdown\HTMLToMarkdownConverter;
 use OCA\Importer\Importer\ImporterInterface;
 
 /**
@@ -33,7 +33,7 @@ class HTMLConverter implements ConverterInterface {
 	 */
 	public function import(string $pathFile, ImporterInterface $importer) : void {
 		$content = file_get_contents(($pathFile));
-		$converter = new HTMLToMarkDownConverter([
+		$converter = new HTMLToMarkdownConverter([
 			'header_style' => 'atx',
 			'strip_tags' => true
 		]);
